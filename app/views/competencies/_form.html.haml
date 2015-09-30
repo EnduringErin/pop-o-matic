@@ -1,0 +1,27 @@
+=form_for :competency, url: competencies_path do |f|
+
+  / - x = 9
+  / - if x > 6
+  /   .alert.alert-danger
+  /     = "Jij bent warm man"
+  / - else
+  /   .alert.alert-success
+  /     = "Coolio"
+
+  - if @competency.errors.any?
+    .alert.alert-danger
+      %h5 De volgende error(s) weerhoud(en) het opslaan:
+      %ul
+        -@competency.errors.full_messages.each do |msg|
+          %li=msg
+
+  %p Aan welke competentie ga je werken?
+  %p=f.select(:name, options_for_select([['Research & Innovation', 'Research'], ['Concepting', 'Concepting'], ['Multimedia Design', 'Design'], ['Multimedia Production', 'Production'], ['Quality Monitoring & Implementation', 'QMI'], ['Multidisciplinary Teamwork', 'Teamwork'], ['Communication', 'Communication'], ['Projectmanagement', 'PM'], ['Sharing', 'Sharing'], ['Growth & Reflection', 'G&R']]), { include_blank: true })
+
+  %p Hoeveel EC's neem je op voor die competentie?
+  %p=f.select(:european_credits, options_for_select([['3', '3'], ['6', '6'], ['9', '9'], ['12', '12']]), { include_blank: true })
+
+  %p Op welk niveau wil je de competentie behalen?
+  %p=f.select(:level, options_for_select([['Basis', 'Basis'], ['Gevorderd', 'Gevorderd'], ['Expert', 'Expert']]), { include_blank: true })
+
+  =f.submit class: "btn btn-success"

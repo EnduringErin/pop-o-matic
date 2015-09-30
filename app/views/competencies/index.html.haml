@@ -1,0 +1,17 @@
+%h2 Competentiematrix
+%p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero autem, tempora animi ipsa suscipit quia.
+
+%table
+  %tr
+    %th Competentie
+    %th EC's
+    %th Niveau
+  -@competencies.each do |c|
+    %tr
+      %td=c.name
+      %td=c.european_credits
+      %td=c.level
+      %td=link_to "Aanpassen", edit_competency_path(:id), class: "btn btn-warning"
+
+
+= link_to "Nieuwe competentie toevoegen", new_competency_path, class: "btn btn-primary"
