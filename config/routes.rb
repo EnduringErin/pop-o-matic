@@ -3,5 +3,4 @@ Rails.application.routes.draw do
 
   resources :competencies
 
-  get 'competencies/index'
 end
