@@ -11,7 +11,9 @@
       %td=c.name
       %td=c.european_credits
       %td=c.level
-      %td=link_to "Aanpassen", edit_competency_path(:id), class: "btn btn-warning"
+      %td=link_to "Weergeven", competency_path(c), class: "btn btn-primary"
+      %td=link_to "Aanpassen", edit_competency_path(c), class: "btn btn-warning"
+      %td=link_to "Verwijderen", competency_path(c), method: :delete, data:{confirm: "Weet je het zeker"}, class: "btn btn-danger"
 
 
-= link_to "Nieuwe competentie toevoegen", new_competency_path, class: "btn btn-primary"
+= link_to "Nieuwe competentie toevoegen", new_competency_path, class: "btn btn-success"

@@ -25,7 +25,22 @@ class CompetenciesController < ApplicationController
     end
   end
 
+  def update
+    @competency = Competency.find(params[:id])
 
+    if @competency.update(competency_params)
+      redirect_to competency_path
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @competency = Competency.find(params[:id])
+    @competency.destroy
+    redirect_to competencies_path
+
+  end
 
   private
     def competency_params
