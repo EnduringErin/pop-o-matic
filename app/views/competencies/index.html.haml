@@ -1,6 +1,5 @@
 %h2 Competentiematrix
 %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero autem, tempora animi ipsa suscipit quia.
-
 %table
   %tr
     %th Competentie
@@ -11,13 +10,9 @@
       %td=c.name
       %td=c.european_credits
       %td=c.level
-<<<<<<< HEAD
-      %td=link_to "Aanpassen", edit_competency_path(:competency_id), class: "btn btn-warning"
-=======
       %td=link_to "Weergeven", competency_path(c), class: "btn btn-primary"
       %td=link_to "Aanpassen", edit_competency_path(c), class: "btn btn-warning"
       %td=link_to "Verwijderen", competency_path(c), method: :delete, data:{confirm: "Weet je het zeker"}, class: "btn btn-danger"
->>>>>>> 5f99dbdd4d0f27c1da6e1aa45f7f73627721e84d
 
 
 = link_to "Nieuwe competentie toevoegen", new_competency_path, class: "btn btn-success"
