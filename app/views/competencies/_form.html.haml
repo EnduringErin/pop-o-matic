@@ -1,13 +1,4 @@
 =form_for @competency do |f|
-
-  / - x = 9
-  / - if x > 6
-  /   .alert.alert-danger
-  /     = "Jij bent warm man"
-  / - else
-  /   .alert.alert-success
-  /     = "Coolio"
-
   - if @competency.errors.any?
     .alert.alert-danger
       %h5 De volgende error(s) weerhoud(en) het opslaan:

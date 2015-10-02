@@ -5,14 +5,14 @@
     %th Competentie
     %th EC's
     %th Niveau
-  -@competencies.each do |c|
+  -@competencies.each do |competency|
     %tr
-      %td=c.name
-      %td=c.european_credits
-      %td=c.level
-      %td=link_to "Weergeven", competency_path(c), class: "btn btn-primary"
-      %td=link_to "Aanpassen", edit_competency_path(c), class: "btn btn-warning"
-      %td=link_to "Verwijderen", competency_path(c), method: :delete, data:{confirm: "Weet je het zeker"}, class: "btn btn-danger"
+      %td=competency.name
+      %td=competency.european_credits
+      %td=competency.level
+      %td=link_to "Weergeven", competency_path(competency), class: "btn btn-primary"
+      %td=link_to "Aanpassen", edit_competency_path(competency), class: "btn btn-warning"
+      %td=link_to "Verwijderen", competency_path(competency), method: :delete, data:{confirm: "Weet je het zeker"}, class: "btn btn-danger"
 
 
 = link_to "Nieuwe competentie toevoegen", new_competency_path, class: "btn btn-success"
